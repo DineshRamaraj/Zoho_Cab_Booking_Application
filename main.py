@@ -86,6 +86,7 @@ def getFreeTaxis(taxis, pickupTime, pickupPoint):
     return new_free_taxis
 
 def main():
+    id = 1
     taxis = createTaxis(4)
 
     while True:
@@ -110,7 +111,8 @@ def main():
 
             free_taxis_list = sorted(free_taxis_list, key=lambda x: x.totalEarnings)
 
-            bookTaxi(1, pickupPoint, dropPoint, pickupTime, free_taxis_list)
+            bookTaxi(id, pickupPoint, dropPoint, pickupTime, free_taxis_list)
+            id = id + 1
 
         elif checking_number == "2":
             for t in taxis:
